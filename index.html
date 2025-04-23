@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sajith Madhusanka | Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        
+       
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+            color: #333;
+            transition: all 0.3s ease;
+        }
+
+        body.dark-mode {
+            background-color: #121212;
+            color: #e0e0e0;
+        }
+
+        header {
+            background: linear-gradient(135deg, #4a90e2, #50c9c3);
+            color: #fff;
+            padding: 2rem;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            position: relative;
+            transition: background-color 0.3s ease;
+        }
+
+        body.dark-mode header {
+            background: linear-gradient(135deg, #333, #555);
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin: 1rem 0;
+            background-color: rgba(0, 0, 0, 0.1);
+            padding: 0.5rem;
+            border-radius: 10px;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 0.5rem 1rem;
+            transition: background-color 0.3s ease;
+        }
+        nav a:active{
+            background-color: #050505;
+
+        }
+
+        
+
+        .dark-mode-toggle {
+            position: fixed;
+            top: 1rem;
+            right: 1rem;
+            background-color: #333;
+            color: #fff;
+            border: none;
+            padding: 0.7rem 1.2rem;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            transition: background 0.3s ease;
+        }
+
+        .dark-mode-toggle:hover {
+            background-color: #555;
+        }
+
+        .whatsapp-chatbot {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #25d366;
+            color: white;
+            padding: 0.8rem 1rem;
+            border-radius: 50px;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease;
+        }
+
+        .whatsapp-chatbot:hover {
+            transform: scale(1.05);
+        }
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .grid-container {
+            display:grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+            padding: 2rem;
+            margin: 0 auto;
+            max-width: 1200px;
+        }
+
+        .card {
+            background: #fff;
+            border-radius: 12px;
+            padding: 2rem;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .card:hover {
+            transform: scale(1.05);
+        }
+
+        body.dark-mode .card {
+            background-color: #333;
+            color: #fff;
+        }
+        .styled-button {
+            background-color:  #4a90e2; /* Green background */
+            color: white; /* White text */
+            padding: 15px 32px; /* Padding for size */
+            text-align: center; /* Center align text */
+            text-decoration: none; /* Remove underline */
+            display: inline-block; /* Make button inline */
+            font-size: 16px; /* Font size */
+            border-radius: 8px; /* Rounded corners */
+            border: none; /* No border */
+            cursor: pointer; /* Pointer cursor on hover */
+            transition: background-color 0.3s ease; /* Smooth background transition */
+        }
+
+        .styled-button:hover {
+            background-color:  #50c9c3; /* Darker green on hover */
+        }
+
+        .styled-button:active {
+            background-color: #8e3e3e; /* Even darker green when clicked */
+        }
+        .resume-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            padding: 2rem;
+            margin: 0 auto;
+            max-width: 1200px;
+        }
+
+        .resume-card {
+            background: #fff;
+            border-radius: 12px;
+            padding: 2rem;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .resume-card:hover {
+            transform: scale(1.05);
+        }
+
+        body.dark-mode .resume-card {
+            background-color: #333;
+            color: #fff;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        ul li {
+            margin-bottom: 10px;
+        }
+        .skill {
+            margin-bottom: 1rem;
+        }
+
+        .progress-bar {
+            background-color: #ddd;
+            border-radius: 20px;
+            width: 100%;
+            height: 10px;
+            margin: 5px 0;
+            overflow: hidden;
+        }
+
+        .progress {
+            background-color: #4a90e2;
+            height: 100%;
+            border-radius: 20px;
+            transition: width 0.4s ease;
+        }
+        .resume-title {
+            font-size: 2rem;
+            text-align: center;
+            margin-bottom: 0.5rem;
+            font-weight: bold;
+            color: #333;
+            transition: color 0.3s ease;
+        }
+
+        body.dark-mode .resume-title {
+            color: #e0e0e0;
+        }
+
+        .resume-underline {
+            width: 80px;
+            height: 4px;
+            background-color: #4a90e2;
+            margin: 0.5rem auto;
+            border: none;
+            border-radius: 2px;
+            transition: background-color 0.3s ease;
+        }
+
+        body.dark-mode .resume-underline {
+            background-color: #ffffff;
+        }
+
+        .social-icons {
+            margin-top:1rem;
+            display: flex;
+            gap: 1rem; 
+        }
+
+        .social-icons a {
+            color: #333;
+            text-decoration: none;
+            font-size: 1.5rem;
+            transition: color 0.3s ease;
+        }
+
+        .social-icons a:hover {
+            color: #4a90e2;
+        }
+
+        body.dark-mode .social-icons a {
+            color: #e0e0e0;
+        }
+
+        body.dark-mode .social-icons a:hover {
+            color: #50c9c3;
+        }
+                /* exertise icons */
+         .expertise-container {
+            display: grid;
+            grid-template-columns: repeat(1, 1fr);
+            gap: 1.5rem;
+            justify-items: center;
+            margin: 1rem 0;
+        }
+
+        .expertise-item {
+            display: flex;
+            align-items: center;
+            text-align: left;
+            gap: 1rem;
+        }
+
+        
+        .icon-square i {
+            color: rgb(0, 0, 0)
+            
+        }
+
+        .expertise-text span {
+            font: size 10px;;
+            color: #333;
+            font-weight: bold;
+        }
+
+        .expertise-text p {
+            font-size: 0.9rem;
+            color: #666;
+            margin-top: 0.3rem;
+        }
+
+        
+        body.dark-mode .icon-square i {
+            color: #ffffff;
+        }
+
+        body.dark-mode .expertise-text span {
+            color: #e0e0e0;
+        }
+
+        body.dark-mode .expertise-text p {
+            color: #aaa;
+        }
+        
+
+
+
+
+    </style>
+    
+</head>
+<body>
+    <header>
+        <h1>Sajith Madhusanka</h1>
+        <p>Creative Graphic Designer | IT Graduate (HND - SLIAT)</p>
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#resume">My Resume</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+        <button class="dark-mode-toggle" onclick="toggleDarkMode()">☀</button>
+    </header>
+
+    <div class="grid-container">
+        <!-- Who Am I Section -->
+        <div class="card" id="who-am-i">
+            <h3 class="font-weight-light">Who am I ?</h3>
+            <hr>
+            <h5>I am a passionate and creative graphic designer,</h5>
+            <p>combining my technical background in IT with a deep love for design.
+             With over 3 years of experience, I help clients create visually impactful and innovative solutions.</p>
+             <a href="cv/sajith-cv.pdf" download class="styled-button">Download My CV</a>
+        </div>
+
+        <!-- Personal Info Section -->
+        <div class="card" id="personal-info">
+            <h3>Personal Info</h3>
+            <hr>
+            <h5><p>Name:  L.G.Sajith Madhusanka</p>
+            <p>Email:  sajithmadhusanka111@gmail.com</p>
+            <p>Phone:  0762828749</p>
+            <p>Address:  Aluthgedara,Udawela,Ibbagamuwa</p></h5>
+            <hr>
+            <div class="social-icons">
+                <a href="https://www.facebook.com/" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://www.twitter.com/" target="_blank"><i class="fab fa-twitter"></i></a>
+                <a href="https://www.linkedin.com/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                <a href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="https://wa.me/94762828749" target="_blank"><i class="fab fa-whatsapp"></i></a>
+            </div>
+        </div>
+
+        <!-- My Expertise Section --><!-- My Expertise Section -->
+        <div class="card" id="expertise">
+            <h3>My Expertise</h3>
+            <hr>
+            <div class="expertise-container">
+                <div class="expertise-item">
+                   
+                    <div class="expertise-text">
+                        <span>Graphic Design</span>
+                        <p>Crafting visually appealing designs that captivate audiences.</p>
+                        <hr>
+                    </div>
+                </div>
+                
+                <div class="expertise-item">
+                 
+                    <div class="expertise-text">
+                        <span>Video Editing</span>
+                        <p>Creating engaging video content with professional editing.</p>
+                        <hr>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+
+
+
+
+
+</div>
+
+    </div>
+    <!-- My Resume Section -->
+    <div class="resume-section">
+        <h2 class="resume-title">My Resume</h2>
+        <hr class="resume-underline">
+    </div>
+    <div class="resume-container" id="resume">
+        <!-- Education Section -->
+        <div class="resume-card" id="education">
+            <h2>Education</h2><hr>
+            <ul>
+                <li><strong>Higher National Diploma (HND) in IT</strong> - SLIAT, Sri Lanka (2023)</li>
+                <li><strong>Advanced Level (A/L)</strong> - Completed with a focus on ICT, Business Studies, and Accounting (2022)</li>
+                <li><strong>Information Technology Level 3 Diploma</strong> - ICBT (2023)</li>
+            </ul>
+            <h2>Languages</h2><hr>
+            <div class="skill">
+                <span>Sinhala</span>
+                <div class="progress-bar">
+                    <div class="progress" style="width:100%;"></div>
+                </div>
+            </div>
+            <div class="skill">
+                <span>English</span>
+                <div class="progress-bar">
+                    <div class="progress" style="width: 70%;"></div>
+                </div>
+            </div>
+            
+        </div>
+
+        <div class="resume-card" id="skills">
+            <h2>Skills</h2>
+            <hr>
+            <div class="skill">
+                <span>Adobe Photoshop</span>
+                <div class="progress-bar">
+                    <div class="progress" style="width: 90%;"></div>
+                </div>
+            </div>
+            <div class="skill">
+                <span>Adobe Illustrator</span>
+                <div class="progress-bar">
+                    <div class="progress" style="width: 85%;"></div>
+                </div>
+            </div>
+            <div class="skill">
+                <span>Figma</span>
+                <div class="progress-bar">
+                    <div class="progress" style="width: 80%;"></div>
+                </div>
+            </div>
+            <div class="skill">
+                <span>Adobe premiere pro</span>
+                <div class="progress-bar">
+                    <div class="progress" style="width: 75%;"></div>
+                </div>
+            </div>
+            <div class="skill">
+                <span>Cap Cut</span>
+                <div class="progress-bar">
+                    <div class="progress" style="width: 70%;"></div>
+                </div>
+            </div>
+            <div class="skill">
+                <span>HTML & CSS</span>
+                <div class="progress-bar">
+                    <div class="progress" style="width: 65%;"></div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+    
+  
+
+    <a class="whatsapp-chatbot" href="https://wa.me/94762828749" target="_blank"> 🗪 Chat with Me</a>
+
+    <footer>
+        <div id="clock">Loading...</div>
+        <p>&copy; 2025 Sajith Madhusanka. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function toggleDarkMode() {
+            document.body.classList.toggle('dark-mode');
+        }
+        function updateTime() {
+        const now = new Date();
+        const hours = String(now.getHours()).padStart(2, '0');
+        const minutes = String(now.getMinutes()).padStart(2, '0');
+        const seconds = String(now.getSeconds()).padStart(2, '0');
+        const currentTime = `${hours}:${minutes}:${seconds}`;
+        document.getElementById('clock').textContent = currentTime;
+        }
+
+    // Initial call
+    updateTime();
+
+    // Update every second
+    setInterval(updateTime, 1000);
+    </script>
+</body>
+</html>
